@@ -1,0 +1,54 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    /* React Native */
+    "target": "esnext",
+    "module": "esnext",
+    "jsx": "react-native",
+    "lib": ["es2017"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Type Safety */
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+
+    /* Module Resolution */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    /* React Native Types */
+    "types": ["react", "react-native", "jest"],
+
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    /* Performance */
+    "incremental": true,
+
+    /* Build */
+    "noEmit": true
+  },
+
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "declarations.d.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "android",
+    "ios"
+  ]
+}
