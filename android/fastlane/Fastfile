@@ -1,0 +1,50 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Clean Android Build"
+  lane :clean_build do
+    gradle(
+      task: "clean"
+    )
+  end
+
+  desc "Build Debug APK"
+  lane :build_debug do
+    gradle(
+      task: "assemble",
+      build_type: "Debug"
+    )
+  end
+
+  desc "Build Release APK"
+  lane :build_apk do
+    gradle(
+      task: "assemble",
+      build_type: "Release"
+    )
+  end
+
+  desc "Build Release AAB"
+  lane :build_aab do
+    gradle(
+      task: "bundle",
+      build_type: "Release"
+    )
+  end
+
+end
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Build iOS Release"
+
+  lane :build_release do
+    build_app(
+      scheme: "DiarchGo"
+    )
+  end
+
+end
